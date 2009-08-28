@@ -1,0 +1,7 @@
+#summary Wishlist/TODO
+= Introduction =
+
+Things that I would like add/change whenever the time and/or motivation occurs.
+
+  * Get rid of OpenSSL and use yaSSL, xySSL, PolarSSL or some other less memory hungry SSL implementation.
+  * ...
