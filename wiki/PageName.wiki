@@ -1,5 +1,4 @@
 #summary Wishlist/TODO
-= Introduction =
 
 Things that I would like add/change whenever the time and/or motivation occurs.
 
