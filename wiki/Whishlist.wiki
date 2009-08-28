@@ -1,13 +1,6 @@
-#summary One-sentence summary of this page.
+#summary Wishlist/TODO
 
-= Introduction =
+Things that I would like add/change whenever the time and/or motivation occurs.
 
-Add your content here.
-
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+  * Get rid of OpenSSL and use yaSSL, xySSL, PolarSSL or some other less memory hungry SSL implementation.
+  * ...
