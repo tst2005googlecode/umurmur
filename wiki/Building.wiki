@@ -1,0 +1,32 @@
+#summary Building uMurmur
+
+= Introduction =
+uMurmur should be able to be built on any remotely POSIX-compliant platform, but the instructions mainly deals with how to build it for OpenWRT. You need a Linux/Unix-like host to do this. Cygwin under windows is not supported. Use a linux dist image with VMWare or some other virtual machine if you don't have a spare Linux build server (but everyone has one, don't they ;)
+
+= Build the SDK =
+Build the OpenWRT SDK for your platform. To do this, download the source, unpack it and run 
+{{{
+# make menuconfig
+}}}
+Then in the menu, select your target platform and model and also select to build the SDK. Exit the menu and run
+{{{
+# make
+}}}
+The SDK should end up in subdir bin/. Extract it somewhere on your disk, e.g.:
+{{{
+# tar xfj OpenWrt-SDK-brcm47xx-for-Linux-x86_64-gcc-4.1.2_uClibc-0.9.30.1.tar.bz2
+}}}
+and then cd to the 'package' subdirectory of the SDK directory:
+{{{
+# cd OpenWrt-SDK-brcm47xx-for-Linux-x86_64-gcc-4.1.2_uClibc-0.9.30.1/package
+}}}
+Use Subversion to fetch the uMurmur sources:
+{{{
+# svn export https://umurmur.googlecode.com/svn/trunk/ umurmur
+}}}
+the 'cd ..' back to the SDK base directory and start the build:
+{{{
+# cd ..
+# make
+}}}
+And finally, the package should be waiting in the 'bin/packages/<target>/' subdir.
