@@ -8,7 +8,7 @@ and then install it with opkg:
 {{{
 # opkg install umurmur_N.N.N-N.ipk
 }}}
-Then take a minute to create a configuration see the Configuring page.
+Then take a minute to create a configuration see the configuring page.
 
 Then if you don't want to restart the router, you need to start up uMurmur with
 {{{
