@@ -29,4 +29,4 @@ the 'cd ..' back to the SDK base directory and start the build:
 # cd ..
 # make
 }}}
-And finally, the package should be waiting in the 'bin/packages/<target>/' subdir.
+And finally, the package should be waiting in the 'bin/packages/target/' subdir.
