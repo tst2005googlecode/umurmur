@@ -4,7 +4,9 @@ Installing uMurmur on a OpenWRT router should just be a matter of copying the .i
 {{{
 # scp umurmur_N.N.N-N.ipk root@<router address>:/tmp
 }}}
-and then install it with opkg:
+If you haven't got OpenSSL and libconfig installed, opkg will complain when installing, so you'd better go ahead and download/build and then install them first.
+
+Then install it with opkg:
 {{{
 # opkg install umurmur_N.N.N-N.ipk
 }}}
