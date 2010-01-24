@@ -1,0 +1,73 @@
+#summary Configuring version 0.2.x
+
+= Introduction =
+Configuration of version 0.2.x differs somewhat from 0.1.x.
+
+= Details =
+
+  # The `max_bandwidth` parameter unit is bits/second per user.
+  # The Root channel bust be defined first.
+  # The channels _must_ have their parent channel defined before in the list.
+
+Example configuration file:
+
+{{{
+max_bandwidth = 48000;
+welcometext = "Welcome to uMurmur!";
+certificate = "cert.crt";
+private_key = "key.key";
+password = "";
+max_users = 10;
+
+# Root channel must always be defined first.
+# If a channel has a parent, the parent must be defined before the child channel(s).
+channels = ( {
+	 name = "Root";
+	 parent = "";
+	 description = "The Root of all channels";
+	 noenter = true;
+	 },
+	 {
+	 name = "Lobby";
+	 parent = "Root";
+	 description = "Lobby channel";
+	 },
+	 {
+	 name = "Red team";
+	 parent = "Lobby";
+	 description = "The Red team channel";
+	 },
+	 {
+	 name = "Blue team";
+	 parent = "Lobby";
+	 description = "The Blue team channel";
+	 }
+);
+# Channel links configuration.
+channel_links = ( {
+	 source = "Lobby";
+	 destination = "Red team";
+	 },
+	 {
+	 source = "Lobby";
+	 destination = "Blue team";
+	 }
+);
+
+default_channel = "Lobby";
+}}}
+
+Most parameters are optional and have default values. 
+
+Optional parameters with defaults within parenthesis:
+  * max_bandwidth (48000)
+  * welcometext ("Welcome to uMurmur!")
+  * certificate ("/etc/umurmur/certificate.crt")
+  * private_key ("/etc/umurmur/private_key.key")
+  * password ("" = empty)
+  * max_users (10)
+  * default_channel (root channel)
+
+In the channel configuration `name` and `parent` are required. The `noenter` and `description` parameters are optional where `noenter` defaults to `false` and `description` to "".
+
+In `channel_links`, both `source` and `destination` parameter are required.
