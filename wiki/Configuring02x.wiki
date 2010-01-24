@@ -14,8 +14,8 @@ Example configuration file:
 {{{
 max_bandwidth = 48000;
 welcometext = "Welcome to uMurmur!";
-certificate = "cert.crt";
-private_key = "key.key";
+certificate = "/etc/umurmur/cert.crt";
+private_key = "/etc/umurmur/key.key";
 password = "";
 max_users = 10;
 
@@ -69,5 +69,6 @@ Optional parameters with defaults within parenthesis:
   * `default_channel` (root channel)
 
 In the channel configuration `name` and `parent` are required. The `noenter` and `description` parameters are optional where `noenter` defaults to `false` and `description` to "".
+The noenter parameter controls whether a channel can be entered or not. This can be useful when grouping channels together in a 'folder', e.g. a game name.
 
 In `channel_links`, both `source` and `destination` parameter are required.
