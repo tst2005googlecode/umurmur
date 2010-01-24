@@ -5,7 +5,7 @@ Configuration of version 0.2.x differs somewhat from 0.1.x.
 
 = Details =
 
-  # The `max_bandwidth` parameter unit is bits/second per user.
+  # The `max_bandwidth` parameter unit is *bits/second* (changed from 0.1.x) per user.
   # The Root channel bust be defined first.
   # The channels _must_ have their parent channel defined before in the list.
 
@@ -57,16 +57,16 @@ channel_links = ( {
 default_channel = "Lobby";
 }}}
 
-Most parameters are optional and have default values. 
+Many parameters are optional and have default values. 
 
 Optional parameters with defaults within parenthesis:
-  * max_bandwidth (48000)
-  * welcometext ("Welcome to uMurmur!")
-  * certificate ("/etc/umurmur/certificate.crt")
-  * private_key ("/etc/umurmur/private_key.key")
-  * password ("" = empty)
-  * max_users (10)
-  * default_channel (root channel)
+  * `max_bandwidth` (48000)
+  * `welcometext` ("Welcome to uMurmur!")
+  * `certificate` ("/etc/umurmur/certificate.crt")
+  * `private_key` ("/etc/umurmur/private_key.key")
+  * `password` ("" = empty)
+  * `max_users` (10)
+  * `default_channel` (root channel)
 
 In the channel configuration `name` and `parent` are required. The `noenter` and `description` parameters are optional where `noenter` defaults to `false` and `description` to "".
 
