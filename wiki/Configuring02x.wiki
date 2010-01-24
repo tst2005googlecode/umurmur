@@ -56,7 +56,7 @@ channel_links = ( {
 
 default_channel = "Lobby";
 }}}
-
+== General configuration parameters ==
 Many parameters are optional and have default values. 
 
 Optional parameters with defaults within parenthesis:
@@ -68,7 +68,11 @@ Optional parameters with defaults within parenthesis:
   * `max_users` (10)
   * `default_channel` (root channel)
 
+== Channels configuration ==
 In the channel configuration `name` and `parent` are required. The `noenter` and `description` parameters are optional where `noenter` defaults to `false` and `description` to "".
 The noenter parameter controls whether a channel can be entered or not. This can be useful when grouping channels together in a 'folder', e.g. a game name.
+
+== Channel links configuration ==
+Channel links is a one-way duplication of speech from one channel to another. An example usage, as demonstrated in the example configuration above, is to make all speech in the lobby be also directed to the team channels. The speech in the team channels is *not* directed to the lobby.
 
 In `channel_links`, both `source` and `destination` parameter are required.
