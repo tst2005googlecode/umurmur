@@ -1,0 +1,6 @@
+#summary The new features in 0.2.0
+  * Uses Mumble protocol 1.2.x, meaning that clients 1.2.x are supported.
+  * Whisper target
+  * Temporary channels
+  * Channel links can be configured in the configuration file.
+  * Positional audio is stripped if users are not in the same plugin context (playing the same game)
