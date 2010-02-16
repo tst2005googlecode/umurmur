@@ -1,13 +1,13 @@
 #summary Configuring version 0.2.x
 
-= Introduction =
-Configuration of version 0.2.x differs somewhat from 0.1.x.
+Configuration of version 0.2.x differs somewhat from 0.1.x. The `max_bandwidth` is now in kbits/s instead of kbytes/s.
 
-= Details =
+= Example configuration =
 
+_Note:_
   # The `max_bandwidth` parameter unit is *bits/second* (changed from 0.1.x) per user.
-  # The Root channel bust be defined first.
-  # The channels _must_ have their parent channel defined before in the list.
+  # The Root channel bust be defined first in the channel list.
+  # The child channels _must_ have their parent channel defined before in the list.
 
 Example configuration file:
 
