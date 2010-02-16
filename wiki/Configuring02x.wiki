@@ -73,6 +73,6 @@ In the channel configuration `name` and `parent` are required. The `noenter` and
 The noenter parameter controls whether a channel can be entered or not. This can be useful when grouping channels together in a 'folder', e.g. a game name.
 
 == Channel links configuration ==
-Channel links is a one-way duplication of speech from one channel to another. It is not neccessary to configure this unless you need this. An example usage, as demonstrated in the example configuration above, is to make all speech in the lobby be also directed to the team channels. The speech in the team channels is *not* directed to the lobby.
+Channel links is a one-way duplication of speech from one channel to another when whispering to the channel. It is not neccesary to configure this unless you need it. An example usage, as demonstrated in the example configuration above, is to make all speech whispered to the lobby also be directed to the team channels. The speech in the team channels is *not* directed to the lobby.
 
 In `channel_links`, both `source` and `destination` parameter are required.
