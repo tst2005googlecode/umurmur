@@ -1,6 +1,6 @@
 #summary Configuring version 0.2.x
 
-Configuration of version 0.2.x differs somewhat from 0.1.x. The `max_bandwidth` is now in kbits/s instead of kbytes/s.
+Configuration of version 0.2.x differs somewhat from 0.1.x. The `max_bandwidth` is now in *bits/s* instead of *bytes/s*.
 
 = Example configuration =
 
