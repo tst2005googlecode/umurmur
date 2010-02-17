@@ -1,8 +1,8 @@
 #summary Changelog
-0.2.1:
-  * Just a version string update that accidentally was left at "0.2.0-beta2" in release 0.2.0
+*0.2.1*:
+  * Just a version string update (accidentally was left at "0.2.0-beta2" in release 0.2.0).
 
-0.2.0:
+*0.2.0*:
 
 Lots of changes. Highlights:
   * Uses Mumble protocol 1.2.x, meaning that clients 1.2.x are supported.
@@ -13,14 +13,14 @@ Lots of changes. Highlights:
   * Channels can be configured non-enterable in configuration file.
   * Positional audio is stripped if users are not in the same plugin context (playing the same game).
 
-0.1.3:
+*0.1.3*:
   * Fix TCP-mode memory leak.
   * Add command-line switch to enable realtime priority
 
-0.1.2:
+*0.1.2*:
   * Increase max string size
   * Force a close when inactivity timer triggers
   * Correct log levels
 
-0.1.1:
+*0.1.1*:
   * Initial release
