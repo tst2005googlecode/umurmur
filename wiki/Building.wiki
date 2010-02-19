@@ -13,6 +13,12 @@ Edit the Makefile to reflect the location of PolarSSL and uncomment the PolarSSL
 = Build for OpenWRT =
 To build for OpenWRT you need a Linux/Unix-like host. Cygwin under Windows is not supported. Use a linux dist image with VMWare or some other virtual machine if you don't have a spare Linux build server (but everyone has one, don't they ;)
 
-Build or otherwise get hold of an OpenWRT SDK for the target platform and version. Use Subversion to fetch the uMurmur sources or download it from the project page and extract it to the packages subdir.
-
-...etc.
+  # Get hold of an OpenWRT SDK for the target platform and version you have. E.g. http://downloads.openwrt.org/kamikaze/8.09.2/brcm47xx/OpenWrt-SDK-brcm47xx-for-Linux-x86_64.tar.bz2. 
+  # Extract the SDK and enter the SDK base directory.
+  # Update the package lists: `scripts/feeds update base && scripts/feeds update packages`
+  # Install libopenssl and libconfig: `scripts/feeds install -d m libopenssl && scripts/feeds install -d m libconfig`
+  # Fetch the uMurmur sources from the project download page and extract it to the package subdir: `cd package && wget http://umurmur.googlecode.com/files/umurmur-0.2.1.tar.gz && tar xfz umurmur-0.2.1.tar.gz`
+  # Rename the resulting directory: `mv umurmur-0.2.1 umurmur-openssl`
+  # Copy and rename Makefile.openssl to its correct place: `cp umurmur-openssl/openwrt/Makefile.openssl umurmur-openssl/Makefile`
+  # Back to SDK base dir and start building: `cd .. && make`
+  # Package shall end up under the `bin/packages/<platform>/` directory.
