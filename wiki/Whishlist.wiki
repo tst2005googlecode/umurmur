@@ -2,5 +2,4 @@
 
 Things that I would like add/change whenever the time and/or motivation occurs.
 
-  * Get rid of OpenSSL and use yaSSL, xySSL, PolarSSL or some other less memory hungry SSL implementation.
-  * ...
+  * Implement additions to the protocol that has occured after 1.2.0-release of Mumble; UserInfo most notably.
