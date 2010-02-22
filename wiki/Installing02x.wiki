@@ -10,7 +10,7 @@ Then install it with opkg:
 {{{
 # opkg install umurmur-openssl_0.2.x-y.ipk
 }}}
-Then take a minute to create a configuration, see the [Configuring] page.
+Then take a minute to create a configuration, see the [Configuring02x] page.
 
 Make sure it is started at bootup:
 {{{
@@ -34,4 +34,4 @@ One important difference to note though: the PolarSSL version of uMurmur doesn't
 # scp my_key.key root@<router address>:/etc/umurmur/
 # scp my_selfsigned_cert.crt root@<router address>:/etc/umurmur/
 }}}
-And that's it.
+Update the configuration file to reflect the location and names of the certificate and key and you're done.
