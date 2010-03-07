@@ -1,4 +1,8 @@
 #summary Changelog
+*0.2.2*:
+  * Fix server crash when user adding an Access Token while connected to the server.
+  * Fix server crash when dragging the self user from a temporary channel and dropping it back into the very same temporary channel.
+
 *0.2.1*:
   * Just a version string update (accidentally was left at "0.2.0-beta2" in release 0.2.0).
 
