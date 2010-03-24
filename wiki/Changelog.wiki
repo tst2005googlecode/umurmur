@@ -1,4 +1,7 @@
 #summary Changelog
+*0.2.3*:
+Fix byte order confusion which made uMurmur not work on big endian platforms.
+
 *0.2.2*:
   * Fix server crash when user adding an Access Token while connected to the server.
   * Fix server crash when dragging the self user from a temporary channel and dropping it back into the very same temporary channel.
