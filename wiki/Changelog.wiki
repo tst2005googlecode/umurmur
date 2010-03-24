@@ -1,6 +1,6 @@
 #summary Changelog
 *0.2.3*:
-Fix byte order confusion which made uMurmur not work on big endian platforms.
+  * Fix byte order confusion which made uMurmur not work on big endian platforms.
 
 *0.2.2*:
   * Fix server crash when user adding an Access Token while connected to the server.
