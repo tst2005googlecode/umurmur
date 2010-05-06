@@ -1,4 +1,6 @@
 #summary Changelog
+*0.2.4*:
+  * Fix bad Makefile that made it into 0.2.3
 *0.2.3*:
   * Fix byte order confusion which made uMurmur not work on big endian platforms.
 
