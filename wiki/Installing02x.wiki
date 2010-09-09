@@ -1,6 +1,11 @@
 #summary Installing uMurmur
 =Installing uMurmur with OpenSSL support=
-Installing uMurmur on a OpenWRT router should just be a matter of copying the .ipk file to your router's /tmp directory, for example by issuing this command from a nearby host (you can of course use WinSCP or whatever):
+Installing uMurmur on a OpenWRT router running any Backfire release is easy since it's available in the package repository. Either install it using the web interface or the command line with:
+{{{
+# opkg update
+# opkg install umurmur-openssl
+}}}
+If you run a Kamikaze you need to build the package as explained in the [Building] page an then copy the .ipk file to your router's /tmp directory, for example by issuing this command from a nearby host (you can of course use WinSCP or whatever):
 {{{
 # scp umurmur-openssl_0.2.x-y.ipk root@<router address>:/tmp
 }}}
