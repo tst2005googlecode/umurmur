@@ -67,6 +67,8 @@ Optional parameters with defaults within parenthesis:
   * `password` ("" = empty)
   * `max_users` (10)
   * `default_channel` (root channel)
+  * `bindaddr` (INADDR_ANY)
+  * `bindport` (64738)
 
 == Channels configuration ==
 In the channel configuration `name` and `parent` are required. The `noenter` and `description` parameters are optional where `noenter` defaults to `false` and `description` to "".
