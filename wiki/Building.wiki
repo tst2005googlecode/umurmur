@@ -13,7 +13,7 @@ Edit the Makefile to reflect the location of PolarSSL and uncomment the PolarSSL
 = Build for OpenWRT =
 To build for OpenWRT you need a Linux/Unix-like host. Cygwin under Windows is not supported. Use a linux dist image with VMWare or some other virtual machine if you don't have a spare Linux build server (but everyone has one, don't they ;)
 
-  # Get hold of an OpenWRT SDK for the target platform and version you have. E.g. http://downloads.openwrt.org/kamikaze/8.09.2/brcm47xx/OpenWrt-SDK-brcm47xx-for-Linux-x86_64.tar.bz2. 
+  # Get hold of an OpenWRT SDK for the target platform and version you have. E.g. http://downloads.openwrt.org/snapshots/trunk/ar71xx/OpenWrt-SDK-ar71xx-for-Linux-x86_64-gcc-4.3.3+cs_uClibc-0.9.32.tar.bz2. 
   # Extract the SDK and enter the SDK base directory.
   # Update the package lists: `scripts/feeds update base && scripts/feeds update packages`
   # Install libopenssl and libconfig: `scripts/feeds install -d m libopenssl && scripts/feeds install -d m libconfig`
