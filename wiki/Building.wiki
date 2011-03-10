@@ -10,7 +10,9 @@ Make sure you have OpenSSL and development packages installed. Enter the 'src' s
 To build with PolarSSL:
 Edit the Makefile to reflect the location of PolarSSL and uncomment the PolarSSL-relevant lines. Comment the OpenSSL-relevant lines. libconfig development package need to be installed. Issue 'make'.
 
-= Build for OpenWRT =
+== Build for OpenWRT ==
+Note that umurmur is available as a package in OpenWRT. Check the package repository.
+
 To build for OpenWRT you need a Linux/Unix-like host. Cygwin under Windows is not supported. Use a linux dist image with VMWare or some other virtual machine if you don't have a spare Linux build server (but everyone has one, don't they ;)
 
   # Get hold of an OpenWRT SDK for the target platform and version you have. E.g. http://downloads.openwrt.org/snapshots/trunk/ar71xx/OpenWrt-SDK-ar71xx-for-Linux-x86_64-gcc-4.3.3+cs_uClibc-0.9.32.tar.bz2. 
@@ -22,3 +24,48 @@ To build for OpenWRT you need a Linux/Unix-like host. Cygwin under Windows is no
   # Copy and rename Makefile.openssl to its correct place: `cp umurmur-openssl/openwrt/Makefile.openssl umurmur-openssl/Makefile`
   # Back to SDK base dir and start building: `cd .. && make`
   # Package shall end up under the `bin/packages/<platform>/` directory.
+
+== Build for SheevaPlug ==
+
+Make sure you have the build-essential package. 
+
+{{{sudo apt-get install build-essential }}}
+
+You can start in whatever fold you like, but I started at home, for simplicity. 
+
+{{{mkdir ~/murmur cd murmur}}} 
+
+Next we get the source for umurmur, and untar it. (make sure to grab the most recent version. 0.2.6 is the most recent as of writing this. 
+
+{{{wget http://umurmur.googlecode.com/files/umurmur-0.2.6.tar.gz && tar xfz umurmur-0.2.6.tar.gz}}}
+
+Next we need to get the most recent libconfig from hyperrealm.com. I'm not sure if this is the most efficient way, but it works. 
+{{{
+wget http://www.hyperrealm.com/libconfig/libconfig-1.4.6.tar.gz && tar xfz libconfig-1.4.6.tar.gz 
+cd libconfig-1.4.6 
+}}}
+I had to use sudo because of a permission denied error in /tmp. 
+
+{{{sudo ./configure}}}
+
+Then we make it to get our libconfig.h 
+
+{{{sudo make}}}
+
+Then we install, so the lconfig library gets where it needs to be. (sorta) 
+
+{{{sudo make install}}}
+
+Then copy the lib/libconfig.h to the umurmur/src directory. 
+
+{{{cp lib/libconfig.h ../umurmur-0.2.6/src/ }}}
+
+On my little plug, it decided to put lconfig in /usr/local/lib, so I needed to move it so the umurmur make could find it. 
+
+{{{sudo cp /usr/local/lib/libcon* /usr/lib/ }}}
+
+Now, we make sure we are in the umurmur source directory. 
+
+{{{cd ~/murmur/umurmur-0.2.6/src}}}
+
+then, just make. (or sudo make, if you have any problems.) make After it finishes, list your directory, and you should see umurmurd. yay!
