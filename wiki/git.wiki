@@ -1,3 +1,3 @@
-The sources are now hosted on GitHub.
+The sources are now hosted on [http://github.com/ GitHub]
 
-Go to the [http://github.com/fatbob313/umurmur GitHub project page]
+Go to the [http://github.com/fatbob313/umurmur GitHub uMurmur page]
