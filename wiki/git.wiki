@@ -1,0 +1,3 @@
+The sources are now hosted on GitHub.
+
+Go to the [http://github.com/fatbob313/umurmur GitHub project page]
