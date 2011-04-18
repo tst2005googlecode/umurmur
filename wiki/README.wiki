@@ -1,4 +1,5 @@
 #summary README
+{{{
 uMurmur - minimalistic Mumble server
 ====================================
 Project page on [GoogleCode](http://code.google.com/p/umurmur/)
@@ -40,3 +41,4 @@ Support/Contact/Documentation
 See the project page, link above.
 
 Have fun!
+}}}
