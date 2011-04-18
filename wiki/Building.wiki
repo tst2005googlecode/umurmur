@@ -3,6 +3,23 @@
 = Introduction =
 uMurmur should be able to be built on any remotely POSIX-compliant platform. 
 
+Make sure you have the required libraries installed: libconfig, libprotobuf-c and OpenSSL or PolarSSL.
+
+To build with OpenSSL:
+{{{
+./configure --with-ssl=openssl
+make
+make install
+}}}
+To build with PolarSSL:
+{{{
+./configure --with-ssl=polarssl
+make
+make install
+}}}
+
+_The instructions below are for version 0.2.6 and earlier_
+
 == General build instruction==
 To build with OpenSSL:
 Make sure you have OpenSSL and development packages installed. Enter the 'src' subdirectory and issue a 'make'. If any package is installed in a nonstandard place you need to edit the Makefile.
