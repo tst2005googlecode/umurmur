@@ -1,7 +1,5 @@
 #summary Configuring version 0.2.x
 
-Configuration of version 0.2.x differs somewhat from 0.1.x. The `max_bandwidth` is now in *bits/s* instead of *bytes/s*.
-
 = Example configuration =
 
 _Note:_
@@ -48,6 +46,7 @@ channels = ( {
 	 name = "Red team";
 	 parent = "Lobby";
 	 description = "The Red team channel";
+         password = "redteampassword";
 	 },
 	 {
 	 name = "Blue team";
@@ -83,8 +82,16 @@ Optional parameters with defaults within parenthesis:
   * `bindport` (64738)
 
 == Channels configuration ==
-In the channel configuration `name` and `parent` are required. The `noenter` and `description` parameters are optional where `noenter` defaults to `false` and `description` to "".
+In the channel configuration `name` and `parent` are required. The `noenter`, `password` and `description` parameters are optional where `noenter` defaults to `false`, `description` and `password` to "".
+
 The noenter parameter controls whether a channel can be entered or not. This can be useful when grouping channels together in a 'folder', e.g. a game name.
+
+Summary of channel parameters:
+  * `name` (required)
+  * `parent` (required)
+  * `noenter` (optional)
+  * `password` (optional)
+  * `description` (optional)
 
 == Channel links configuration ==
 Channel links is a one-way duplication of speech from one channel to another when whispering to the channel. It is not neccesary to configure this unless you need it. An example usage, as demonstrated in the example configuration above, is to make all speech whispered to the lobby also be directed to the team channels. The speech in the team channels is *not* directed to the lobby.
