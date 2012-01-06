@@ -1,6 +1,5 @@
 #summary Building uMurmur
 
-= Introduction =
 uMurmur should be able to be built on any remotely POSIX-compliant platform. 
 
 Make sure you have the required libraries installed: libconfig, libprotobuf-c and OpenSSL or PolarSSL.
@@ -18,9 +17,19 @@ make
 make install
 }}}
 
-_The instructions below are for version 0.2.6 and earlier_
+Note that Protobuf-C can be built using `./configure --disable-protoc`. This will only build the runtime library and you are relieved of the dependency on Protobuf.
 
-== General build instruction==
+=== List of packages (from debian repo) required to compile umurmur on debian ===
+
+{{{
+aptitude install libconfig8 libconfig++8
+aptitude install libconfig8-dev libconfig++8-dev
+aptitude install protobuf-c-compiler  protobuf-compiler  libprotobuf-c0 libprotobuf-c0-dev
+aptitude install libssl-dev
+}}}
+
+
+== Build instructions for for version uMurmur 0.2.6 and earlier ==
 To build with OpenSSL:
 Make sure you have OpenSSL and development packages installed. Enter the 'src' subdirectory and issue a 'make'. If any package is installed in a nonstandard place you need to edit the Makefile.
 
