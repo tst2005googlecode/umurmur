@@ -15,26 +15,34 @@ welcometext = "Welcome to uMurmur!";
 certificate = "/etc/umurmur/cert.crt";
 private_key = "/etc/umurmur/key.key";
 password = "";
+admin_password = "test";   # Set to enable admin functionality.
+ban_length = 0;            # Length in seconds for a ban. Default is 0. 0 = forever.
+enable_ban = false;        # Default is false
+banfile = "banfile.txt";   # File to save bans to. Default is to not save bans to file.
+sync_banfile = false;      # Keep banfile synced. Default is false, which means it is saved to at shutdown only.
+allow_textmessage = true;  # Default is true
 max_users = 10;
 
-# Specify port and/or address to bind to. Typically not needed.
-# Default is '*' for address and 64738 for port. 
-# Can also be specified on the command line, which takes precedence if
-# both are specified.
 # bindport = 64738;
 # bindaddr = "192.168.1.1";
 
-# Specify this for privilege dropping. If username is specified but not 
-# the groupname, the user's login group is used.
-# username = "umurmuruser";
-# groupname = "umurmurgrp";
+# username and groupname for privilege dropping.
+# Will attempt to switch user if set. 
+# username = "";
+# If groupname not set the user's default login group will be used
+# groupname = "";
 
+# Log to file option. Default is logging to syslog.
+# umurmurd will close and reopen the logfile if SIGHUP is received.
+# logfile = "/var/log/umurmurd.log";
+
+# Channel tree definition:
 # Root channel must always be defined first.
 # If a channel has a parent, the parent must be defined before the child channel(s).
 channels = ( {
 	 name = "Root";
 	 parent = "";
-	 description = "The Root of all channels";
+	 description = "Root channel. No entry.";
 	 noenter = true;
 	 },
 	 {
@@ -46,12 +54,13 @@ channels = ( {
 	 name = "Red team";
 	 parent = "Lobby";
 	 description = "The Red team channel";
-         password = "redteampassword";
+     # password = "redpw";
 	 },
 	 {
 	 name = "Blue team";
 	 parent = "Lobby";
 	 description = "The Blue team channel";
+     # password = "bluepw";
 	 }
 );
 # Channel links configuration.
@@ -65,10 +74,15 @@ channel_links = ( {
 	 }
 );
 
+# The channel in which users will appear in when connecting.
+# Note that default channel can't have 'noenter = true' or password set
 default_channel = "Lobby";
 }}}
 == General configuration parameters ==
 Many parameters are optional and have default values. 
+
+Parameters with a version number within [] means that was the version of uMurmur the parameter was added.
+
 
 Optional parameters with defaults within parenthesis:
   * `max_bandwidth` (48000)
@@ -78,8 +92,14 @@ Optional parameters with defaults within parenthesis:
   * `password` ("" = empty)
   * `max_users` (10)
   * `default_channel` (root channel)
-  * `bindaddr` (INADDR_ANY)
+  * `bindaddr` (INADDR_ANY = all addresses the host is assigned)
   * `bindport` (64738)
+  * `admin_password` ("" - if not set no admin functions enabled) [0.2.9]
+  * `ban_length` (0 = forever) (seconds) [0.2.9]
+  * `enable_ban` (false) [0.2.9]
+  * `banfile` ("" = none) [0.2.9]
+  * `sync_banfile` (false) [0.2.9]
+  * `allow_textmessage` (true) [0.2.9]
 
 == Channels configuration ==
 In the channel configuration `name` and `parent` are required. The `noenter`, `password` and `description` parameters are optional where `noenter` defaults to `false`, `description` and `password` to "".
@@ -90,7 +110,7 @@ Summary of channel parameters:
   * `name` (required)
   * `parent` (required)
   * `noenter` (optional)
-  * `password` (optional)
+  * `password` (optional) [0.2.8]
   * `description` (optional)
 
 == Channel links configuration ==
