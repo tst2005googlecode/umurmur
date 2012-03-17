@@ -1,4 +1,9 @@
 #summary Changelog
+*0.2.9*:
+  * Add admin functionality with mute/deafen/kick/ban users.
+  * Option to disable text messages in configuration.
+  * Some more stuff I don't remember right now. See the GitHub commitlog...
+
 *0.2.8*:
   * Add channel passwords support. `'password = "<password>";'` in channel configuration.
   * Remove pointless CA cert handling with PolarSSL. Did not work anyway...
