@@ -6,7 +6,7 @@ I'm writing this guide for people who have DD-WRT running on their router and wa
 
 Enable JFFS2 as per instructions (read carefully!): 
 
-http://www.dd-wrt.com/wiki/index.php/Journalling_Flash_File_System#Di... 
+http://www.dd-wrt.com/wiki/index.php/Journalling_Flash_File_System 
 
 On my router, installing umurmur required between 200kb and 300kb, so make sure you have 300kb free space on the JFFS. You can check the free space on your status page. If you have less, you'll have to look for alternatives (USB stick or network share?). 
 
@@ -83,7 +83,7 @@ uploaded the certificate with WinSCP, you can use the internal editor of
 WinSCP to edit the file. Do not use Notepad to edit it as it will mess up 
 the line endings. If you need to edit the file using the console, use 'vi' 
 to edit the file (if you've never used 'vi' before, look here: 
-http://www.howtogeek.com/102468/a-beginners-guide-to-editing-text-fil...). 
+http://www.howtogeek.com/102468/a-beginners-guide-to-editing-text-files-with-vi/). 
 The comments in the file should point you in the right direction. 
 After saving the configuration file, check if you didn't accidentally mess 
 it up: 
