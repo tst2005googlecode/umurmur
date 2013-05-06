@@ -21,6 +21,7 @@ enable_ban = false;        # Default is false
 banfile = "banfile.txt";   # File to save bans to. Default is to not save bans to file.
 sync_banfile = false;      # Keep banfile synced. Default is false, which means it is saved to at shutdown only.
 allow_textmessage = true;  # Default is true
+opus_threshold = 100;      # Required percentage of users that support Opus codec for it to be chosen
 max_users = 10;
 
 # bindport = 64738;
@@ -100,6 +101,7 @@ Optional parameters with defaults within parenthesis:
   * `banfile` ("" = none) [0.2.9]
   * `sync_banfile` (false) [0.2.9]
   * `allow_textmessage` (true) [0.2.9]
+  * `opus_threshold` (100) [0.2.11]
 
 == Channels configuration ==
 In the channel configuration `name` and `parent` are required. The `noenter`, `password` and `description` parameters are optional where `noenter` defaults to `false`, `description` and `password` to "".
