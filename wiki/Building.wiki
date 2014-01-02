@@ -41,15 +41,13 @@ Note that umurmur is available as a package in OpenWRT. Check the package reposi
 
 To build for OpenWRT you need a Linux/Unix-like host. Cygwin under Windows is not supported. Use a linux dist image with VMWare or some other virtual machine if you don't have a spare Linux build server (but everyone has one, don't they ;)
 
-  # Get hold of an OpenWRT SDK for the target platform and version you have. E.g. http://downloads.openwrt.org/snapshots/trunk/ar71xx/OpenWrt-SDK-ar71xx-for-Linux-x86_64-gcc-4.3.3+cs_uClibc-0.9.32.tar.bz2. 
-  # Extract the SDK and enter the SDK base directory.
+Something along the line of:
+  # Follow instructions on openwrt.org to clone/checkout the OpenWRT sources and build it for your particular platform.
   # Update the package lists: `scripts/feeds update base && scripts/feeds update packages`
-  # Install libopenssl and libconfig: `scripts/feeds install -d m libopenssl && scripts/feeds install -d m libconfig`
-  # Fetch the uMurmur sources from the project download page and extract it to the package subdir: `cd package && wget http://umurmur.googlecode.com/files/umurmur-0.2.1.tar.gz && tar xfz umurmur-0.2.1.tar.gz`
-  # Rename the resulting directory: `mv umurmur-0.2.1 umurmur-openssl`
-  # Copy and rename Makefile.openssl to its correct place: `cp umurmur-openssl/openwrt/Makefile.openssl umurmur-openssl/Makefile`
-  # Back to SDK base dir and start building: `cd .. && make`
-  # Package shall end up under the `bin/packages/<platform>/` directory.
+  # Install umurmur `scripts/feeds install -d m umurmur-polarssl`
+  # To use another version edit feeds/packages/net/umurmur/Makefile. Be sure to update the MD5 checksum.
+  # Build it `make package/umurmur/compile`
+  # Package shall end up under the `bin/<platform>/packages/` directory.
 
 == Build for SheevaPlug ==
 
