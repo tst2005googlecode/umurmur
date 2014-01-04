@@ -1,4 +1,13 @@
 #summary Changelog
+*0.2.14*:
+  * Add 'silent' option to channel configuration.
+  * Add 'position' option to channel configuration.
+  * Support PolarSSL 1.3.x.
+  * Handle PolarSSL compiled with zlib-support.
+  * Use CLOCK_MONOTONIC instead of gettimeofday() which can cause mayhem if time changes dramatically, e.g. when synchronizing with time server.
+  * Add support for certificate chain delivery for OpenSSL via new option 'ca_path'.
+
+
 *0.2.13*:
   * Fix Opus not working.
   * Add timestamp to logfile.
