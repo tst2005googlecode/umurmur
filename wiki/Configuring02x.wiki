@@ -14,6 +14,8 @@ max_bandwidth = 48000;
 welcometext = "Welcome to uMurmur!";
 certificate = "/etc/umurmur/cert.crt";
 private_key = "/etc/umurmur/key.key";
+ca_path = "/path/to/ca/certificates/";  # Location of CA certificate. Relevant for OpenSSL only.
+
 password = "";
 admin_password = "test";   # Set to enable admin functionality.
 ban_length = 0;            # Length in seconds for a ban. Default is 0. 0 = forever.
@@ -97,6 +99,7 @@ Optional parameters with defaults within parenthesis:
   * `welcometext` ("Welcome to uMurmur!")
   * `certificate` ("/etc/umurmur/certificate.crt")
   * `private_key` ("/etc/umurmur/private_key.key")
+  * `ca_path` (NULL) [0.2.14]
   * `password` ("" = empty)
   * `max_users` (10)
   * `default_channel` (root channel)
