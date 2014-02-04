@@ -62,7 +62,14 @@ channels = ( {
 	 parent = "Lobby";
 	 description = "The Blue team channel";
      # password = "bluepw";
-	 }
+	 },
+	 {
+	 name = "Silent";
+	 parent = "Root";
+	 description = "Silent channel";
+         silent = true;
+         position = -1; # Will appear before 'lobby' channel in the client's channel tree
+	 },
 );
 # Channel links configuration.
 channel_links = ( {
@@ -104,9 +111,13 @@ Optional parameters with defaults within parenthesis:
   * `opus_threshold` (100) [0.2.11]
 
 == Channels configuration ==
-In the channel configuration `name` and `parent` are required. The `noenter`, `password` and `description` parameters are optional where `noenter` defaults to `false`, `description` and `password` to "".
+In the channel configuration `name` and `parent` are required. The `noenter`, `password` and `description` parameters are optional where `noenter` defaults to `false`, `description` and `password` to "". Other optional parameters are `silent` which is either `true` or `false` (default) and `position` which is an integer and defaults to 0.1
 
 The noenter parameter controls whether a channel can be entered or not. This can be useful when grouping channels together in a 'folder', e.g. a game name.
+
+A channel with `silent` set to true will be exactly that, silent. No speech will be transmitted.
+
+The `position` parameter will control where the channel will appear in the clint's channel tree. The default is 0 and the channels will then be sorted alphabetically.
 
 Summary of channel parameters:
   * `name` (required)
@@ -114,6 +125,8 @@ Summary of channel parameters:
   * `noenter` (optional)
   * `password` (optional) [0.2.8]
   * `description` (optional)
+  * `silent` (optional) [0.2.14]
+  * `position` (optional) [0.2.14]
 
 == Channel links configuration ==
 Channel links is a one-way duplication of speech from one channel to another when whispering to the channel. It is not neccesary to configure this unless you need it. An example usage, as demonstrated in the example configuration above, is to make all speech whispered to the lobby also be directed to the team channels. The speech in the team channels is *not* directed to the lobby.
