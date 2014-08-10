@@ -29,6 +29,9 @@ max_users = 10;
 # bindport = 64738;
 # bindaddr = "192.168.1.1";
 
+# bindport6 = 64738;
+# bindaddr6 = "fde4:8dba:82e1::/48";
+
 # username and groupname for privilege dropping.
 # Will attempt to switch user if set. 
 # username = "";
@@ -105,6 +108,8 @@ Optional parameters with defaults within parenthesis:
   * `default_channel` (root channel)
   * `bindaddr` (INADDR_ANY = all addresses the host is assigned)
   * `bindport` (64738)
+  * `bindaddr6` (INADDR_ANY = all addresses the host is assigned) [0.2.15]
+  * `bindport6` (64738) [0.2.15]
   * `admin_password` ("" - if not set no admin functions enabled) [0.2.9]
   * `ban_length` (0 = forever) (seconds) [0.2.9]
   * `enable_ban` (false) [0.2.9]
