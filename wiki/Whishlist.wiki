@@ -2,4 +2,4 @@
 
 Things that I would like add/change whenever the time and/or motivation occurs.
 
-  * IPv6 support.
+  * None at the moment.
