@@ -74,7 +74,7 @@ channels = ( {
 	 description = "Silent channel";
          silent = true;
          position = -1; # Will appear before 'lobby' channel in the client's channel tree
-	 },
+	 }
 );
 # Channel links configuration.
 channel_links = ( {
